@@ -93,18 +93,6 @@ public class TopToolbar extends Composite {
   private static final String WIDGET_NAME_SETTINGS = "Settings";
   private static final String WIDGET_NAME_AUTOLOAD = "Autoload Last Project";
   private static final String WIDGET_NAME_DYSLEXIC_FONT = "DyslexicFont";
-  private static final String WIDGET_NAME_HELP = "Help";
-  private static final String WIDGET_NAME_ABOUT = "About";
-  private static final String WIDGET_NAME_LIBRARY = "Library";
-  private static final String WIDGET_NAME_GETSTARTED = "GetStarted";
-  private static final String WIDGET_NAME_TUTORIALS = "Tutorials";
-  private static final String WIDGET_NAME_EXTENSIONS = "Extensions";
-  private static final String WIDGET_NAME_SHOWSPLASH = "ShowSplash";
-  private static final String WIDGET_NAME_TROUBLESHOOTING = "Troubleshooting";
-  private static final String WIDGET_NAME_FORUMS = "Forums";
-  private static final String WIDGET_NAME_FEEDBACK = "ReportIssue";
-  private static final String WIDGET_NAME_COMPANIONINFO = "CompanionInformation";
-  private static final String WIDGET_NAME_COMPANIONUPDATE = "CompanionUpdate";
   private static final String WIDGET_NAME_IMPORTPROJECT = "ImportProject";
   private static final String WIDGET_NAME_IMPORTTEMPLATE = "ImportTemplate";
   private static final String WIDGET_NAME_EXPORTALLPROJECTS = "ExportAllProjects";
@@ -159,20 +147,17 @@ public class TopToolbar extends Composite {
     connectDropDown = makeButton(WIDGET_NAME_CONNECT_TO, MESSAGES.connectTabName());
     buildDropDown = makeButton(WIDGET_NAME_BUILD, MESSAGES.buildTabName());
     settingsDropDown = makeButton(WIDGET_NAME_SETTINGS, MESSAGES.settingsTabName());
-    helpDropDown = makeButton(WIDGET_NAME_HELP, MESSAGES.helpTabName());
 
     createProjectsMenu();
     createConnectMenu();
     createBuildMenu();
     createSettingsMenu();
-    createHelpMenu();
 
     // Add the Buttons to the Toolbar.
     toolbar.add(fileDropDown);
     toolbar.add(connectDropDown);
     toolbar.add(buildDropDown);
     toolbar.add(settingsDropDown);
-    toolbar.add(helpDropDown);
 
     //Only if logged in as an admin, add the Admin Button
     if (Ode.getInstance().getUser().getIsAdmin()) {
@@ -345,58 +330,6 @@ public class TopToolbar extends Composite {
           new SetFontDyslexicAction()));
     }
     refreshMenu(settingsDropDown, settingsItems);
-  }
-
-  private void createHelpMenu() {
-    List<DropDownItem> helpItems = Lists.newArrayList();
-    helpItems.add(new DropDownItem(WIDGET_NAME_ABOUT, MESSAGES.aboutMenuItem(),
-        new AboutAction()));
-    helpItems.add(null);
-    Config config = Ode.getSystemConfig();
-    String libraryUrl = config.getLibraryUrl();
-    if (!Strings.isNullOrEmpty(libraryUrl)) {
-      helpItems.add(new DropDownItem(WIDGET_NAME_LIBRARY, MESSAGES.libraryMenuItem(),
-          new WindowOpenAction(libraryUrl)));
-    }
-    String getStartedUrl = config.getGetStartedUrl();
-    if (!Strings.isNullOrEmpty(getStartedUrl)) {
-      helpItems.add(new DropDownItem(WIDGET_NAME_GETSTARTED, MESSAGES.getStartedMenuItem(),
-          new WindowOpenAction(getStartedUrl)));
-    }
-    String extensionsUrl = config.getExtensionsUrl();
-    if (!Strings.isNullOrEmpty(extensionsUrl)) {
-      helpItems.add(new DropDownItem(WIDGET_NAME_EXTENSIONS, MESSAGES.extensionsMenuItem(),
-          new WindowOpenAction(extensionsUrl)));
-    }
-    String tutorialsUrl = config.getTutorialsUrl();
-    if (!Strings.isNullOrEmpty(tutorialsUrl)) {
-      helpItems.add(new DropDownItem(WIDGET_NAME_TUTORIALS, MESSAGES.tutorialsMenuItem(),
-          new WindowOpenAction(tutorialsUrl)));
-    }
-    String troubleshootingUrl = config.getTroubleshootingUrl();
-    if (!Strings.isNullOrEmpty(troubleshootingUrl)) {
-      helpItems.add(new DropDownItem(WIDGET_NAME_TROUBLESHOOTING, MESSAGES.troubleshootingMenuItem(),
-          new WindowOpenAction(troubleshootingUrl)));
-    }
-    String forumsUrl = config.getForumsUrl();
-    if (!Strings.isNullOrEmpty(forumsUrl)) {
-      helpItems.add(new DropDownItem(WIDGET_NAME_FORUMS, MESSAGES.forumsMenuItem(),
-          new WindowOpenAction(forumsUrl)));
-    }
-    helpItems.add(null);
-    String feedbackUrl = config.getFeedbackUrl();
-    if (!Strings.isNullOrEmpty(feedbackUrl)) {
-      helpItems.add(new DropDownItem(WIDGET_NAME_FEEDBACK, MESSAGES.feedbackMenuItem(),
-          new WindowOpenAction(feedbackUrl)));
-      helpItems.add(null);
-    }
-    helpItems.add(new DropDownItem(WIDGET_NAME_COMPANIONINFO, MESSAGES.companionInformation(),
-        new AboutCompanionAction()));
-    helpItems.add(new DropDownItem(WIDGET_NAME_COMPANIONUPDATE, MESSAGES.companionUpdate(),
-        new CompanionUpdateAction()));
-    helpItems.add(new DropDownItem(WIDGET_NAME_SHOWSPLASH, MESSAGES.showSplashMenuItem(),
-        new ShowSplashAction()));
-    refreshMenu(helpDropDown, helpItems);
   }
 
   private void createAdminMenu() {
@@ -826,102 +759,6 @@ public class TopToolbar extends Composite {
       Ode.getInstance().setUserDyslexicFont(false);
       // Window.Location.reload();
       // Not: See above comment
-    }
-  }
-
-  private static class AboutAction implements Command {
-    @Override
-    public void execute() {
-      final DialogBox db = new DialogBox(false, true);
-      db.setText("About MIT App Inventor");
-      db.setStyleName("ode-DialogBox");
-      db.setHeight("200px");
-      db.setWidth("400px");
-      db.setGlassEnabled(true);
-      db.setAnimationEnabled(true);
-      db.center();
-
-      VerticalPanel DialogBoxContents = new VerticalPanel();
-      String html = MESSAGES.gitBuildId(GitBuildId.getDate(), GitBuildId.getVersion()) +
-          "<BR/>" + MESSAGES.useCompanion(YaVersion.PREFERRED_COMPANION, YaVersion.PREFERRED_COMPANION + "u") +
-          "<BR/>" + MESSAGES.targetSdkVersion(YaVersion.TARGET_SDK_VERSION, YaVersion.TARGET_ANDROID_VERSION);
-      Config config = Ode.getInstance().getSystemConfig();
-      String releaseNotesUrl = config.getReleaseNotesUrl();
-      if (!Strings.isNullOrEmpty(releaseNotesUrl)) {
-        html += "<BR/><BR/>Please see <a href=\"" + releaseNotesUrl +
-            "\" target=\"_blank\">release notes</a>";
-      }
-      String tosUrl = config.getTosUrl();
-      if (!Strings.isNullOrEmpty(tosUrl)) {
-        html += "<BR/><BR/><a href=\"" + tosUrl +
-            "\" target=\"_blank\">" + MESSAGES.privacyTermsLink() + "</a>";
-      }
-      HTML message = new HTML(html);
-
-      SimplePanel holder = new SimplePanel();
-      Button ok = new Button("Close");
-      ok.addClickListener(new ClickListener() {
-        public void onClick(Widget sender) {
-          db.hide();
-        }
-      });
-      holder.add(ok);
-      DialogBoxContents.add(message);
-      DialogBoxContents.add(holder);
-      db.setWidget(DialogBoxContents);
-      db.show();
-    }
-  }
-
-  private static class AboutCompanionAction implements Command {
-    @Override
-    public void execute() {
-      final DialogBox db = new DialogBox(false, true);
-      db.setText("About The Companion");
-      db.setStyleName("ode-DialogBox");
-      db.setHeight("200px");
-      db.setWidth("400px");
-      db.setGlassEnabled(true);
-      db.setAnimationEnabled(true);
-      db.center();
-
-      String downloadinfo = "";
-      if (!YaVersion.COMPANION_UPDATE_URL1.equals("")) {
-        String url = "http://" + Window.Location.getHost() + YaVersion.COMPANION_UPDATE_URL1;
-        downloadinfo = "<br/>\n<a href=" + url + ">Download URL: " + url + "</a><br/>\n";
-        downloadinfo += BlocklyPanel.getQRCode(url);
-      }
-
-      VerticalPanel DialogBoxContents = new VerticalPanel();
-      HTML message = new HTML(
-          "Companion Version " + BlocklyPanel.getCompVersion() + downloadinfo
-      );
-
-      SimplePanel holder = new SimplePanel();
-      Button ok = new Button("Close");
-      ok.addClickListener(new ClickListener() {
-        public void onClick(Widget sender) {
-          db.hide();
-        }
-      });
-      holder.add(ok);
-      DialogBoxContents.add(message);
-      DialogBoxContents.add(holder);
-      db.setWidget(DialogBoxContents);
-      db.show();
-    }
-  }
-
-  private static class CompanionUpdateAction implements Command {
-    @Override
-    public void execute() {
-      DesignToolbar.DesignProject currentProject = Ode.getInstance().getDesignToolbar().getCurrentProject();
-      if (currentProject == null) {
-        Window.alert(MESSAGES.companionUpdateMustHaveProject());
-        return;
-      }
-      DesignToolbar.Screen screen = currentProject.screens.get(currentProject.currentScreen);
-      screen.blocksEditor.updateCompanion();
     }
   }
 

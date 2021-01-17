@@ -12,6 +12,10 @@ they get cut off in Windows.
 @import url("http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold");
 */
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 @font-face {
   font-family: Roboto;
   src: url('../fonts/Roboto-Regular.ttf');
@@ -39,10 +43,10 @@ body, html {
 }
 
 body {
-  background-color: lightgrey;
+  background-color: white;
   font-family: Roboto, Helvetica, Arial, sans-serif;
   /* TODO(opensource): Change to commented version below once we're ready */
-  background: url(../images/squairy_light.png);
+  /* background: url(../images/squairy_light.png); */
 }
 
 .dyslexic * {
@@ -51,8 +55,8 @@ body {
 
 /* For the TOS Form*/
 .floatingBox {
-  width: 300px;
-  height: 250px;
+  width: 1050px;
+  height: 700px;
   background-color: white;
   position: absolute;
   top:0;
@@ -64,6 +68,20 @@ body {
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.065);
   text-align: center;
   border: 1px #262626;
+}
+
+.tosBox {
+    overflow: scroll;
+    height: 500px;
+    text-align: left;
+    }
+
+.tosBox h1 {
+    text-align: center;
+}
+
+.tosBox h3 {
+    text-align: center;
 }
 
 /*
@@ -120,10 +138,9 @@ body {
 
 .ode-Box-content {
   font-size: 13px;
-  background-color: #f7f9f2;
+  background-color: #ffffff;
   /* TODO(opensource): Delete the background-image line below once we're ready */
-  background-image: url(../images/watermark.png);
-  color: #555;
+  color: #ddd;
   border-left: 1px solid #d2d2d2;
   border-bottom: 1px solid #d2d2d2;
   border-right: 1px solid #d2d2d2;
@@ -132,10 +149,10 @@ body {
 }
 
 .ode-Box-header {
-  background: rgba(102, 153, 0, 0.3);
+  background: rgb(255 255 255 / 0%);
   height: 31px;
   border: 1px solid;
-  border-color: #d2d2d2 #d2d2d2 #b0b2a7 #d2d2d2;
+  border-color: #ff9600 #ff9600 #ff9600 #ff9600;
 }
 
 .ode-Box-header-caption,
@@ -154,8 +171,7 @@ body {
   color: red; /* too strong, but use red for now */
 }
 
-.ode-Box-body {
-}
+.ode-Box-body {height: 755px;}
 
 .ode-Box-body-padding {
   padding: 6px;
@@ -297,16 +313,17 @@ body {
   margin-bottom: 4px;
   padding-right: 4px;
   padding-left: 4px;
-  background-color: #f2f2f2;
+  background-color: #0030ff;
   background-image: -moz-linear-gradient(top, #f2f2f2, #f3f3f3);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f2f2f2), to(#f3f3f3));
   background-image: -webkit-linear-gradient(top, #f2f2f2, #f3f3f3);
   background-image: -o-linear-gradient(top, #f2f2f2, #f3f3f3);
   background-image: linear-gradient(to bottom, #f2f2f2, #f3f3f3);
   background-repeat: repeat-x;
-  border: 1px solid #d4d4d4;
+  border: 1px solid #000dff;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff2f2f2', GradientType=0);
-  *zoom: 1;
+  *
+  zoom: 1;
   -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
   -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
@@ -397,9 +414,10 @@ body {
   margin: -12px 0px;
   padding: 0px 12px;
   height: 40px;
-  border: transparent;
-  background: transparent;
-  color: grey;
+  border: #ff000000;
+  background: #ef101000;
+  color: black;
+  border-width: medium;
   -o-transition:color .2s ease-out, background .2s ease-in;
   -ms-transition:color .2s ease-out, background .2s ease-in;
   -moz-transition:color .2s ease-out, background .2s ease-in;
@@ -569,8 +587,9 @@ body {
 /* Young Android Toolbar */
 
 .ya-Toolbar {
-  background-color: #8fc202;
+  background-color: #69e;
   margin-bottom: 4px;
+  border-radius: 10px;
 }
 
 .ya-Toolbar .ya-ProjectName {
@@ -726,10 +745,12 @@ body {
   height: 14px;
   color: #555;
   padding: 8px 16px;
+  border-radius: 25px;
 }
 
 .gwt-StackPanelItem-selected div {
   font-weight: bold;
+  background-color: aqua;
 }
 
 .gwt-StackPanelContent {
@@ -754,6 +775,7 @@ body {
   height: 15px;
   cursor: pointer;
   padding: 5px;
+  border-radius: 10px;
 }
 
 .ode-SimplePaletteItem-icon {
@@ -1194,16 +1216,16 @@ path.ode-SimpleMockMapFeature-selected {
 
 .ode-ComponentHelpPopup {
   background-color: white;
-  border-left: 4px solid #8fc202;
-  border-right: 4px solid #8fc202;
-  border-bottom: 4px solid #8fc202;
+  border-left: 4px solid #7af;
+  border-right: 4px solid #7af;
+  border-bottom: 4px solid #7af;
   width: 20%;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.065);
   z-index: 1000;
 }
 
 .ode-ComponentHelpPopup-TitleBar {
-  background-color: #8fc202;
+  background-color: #7af;
   color: white;
   font-weight: bold;
   font-size: 13px;

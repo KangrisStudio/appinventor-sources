@@ -1,0 +1,966 @@
+.ode-TextButton {
+  background: none;
+  background-color: #4156A6 !important;
+  color: white;
+  padding: 1em 2em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em !important;
+  cursor: pointer;
+  border-radius: 0.25em;
+  text-shadow: none;
+  background-image: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: none;
+}
+
+.ode-TextButton:hover {
+  color: white;
+  background-color: #172c79 !important;
+}
+
+label.gwt-CheckBox {
+  display: block;
+}
+
+.ode-ContextMenuItem-selected {
+  background-color: #4156A6;
+}
+
+tr.ode-ProjectRowUnHighlighted:hover {
+  background-color: #D9DDED;
+}
+
+body {
+  font-family: Material Icons, Roboto, Helvetica, Arial, sans-serif;
+  background: none !important;
+  background-color: #F2F2F2 !important;
+}
+
+.gwt-HTML {
+  padding: 1em 0;
+}
+
+.ode-StatusPanel {
+  color: white;
+  background: none !important;
+  background-color: #202E47 !important;
+  border: 1px;
+}
+
+.ode-StatusPanel a {
+  color: white;
+  text-decoration: none;
+}
+
+.ode-StatusPanel a:hover {
+  font-weight: 800;
+}
+
+img.ode-Logo {
+  width: 10em;
+  margin-top: 0.5em;
+  margin-left: 2em;
+  padding: 0.75em 0;
+}
+
+.ode-TopPanelButton, .ActionDropDown-Default, .ActionDropDown-Options {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: -12px 0px;
+  padding: 0px 12px;
+  height: 40px;
+  border: transparent;
+  background: transparent;
+  color: grey;
+  -o-transition: color .2s ease-out, background .2s ease-in;
+  -ms-transition: color .2s ease-out, background .2s ease-in;
+  -moz-transition: color .2s ease-out, background .2s ease-in;
+  -webkit-transition: color .2s ease-out, background .2s ease-in;
+  transition: color .2s ease-out, background .2s ease-in;
+}
+
+.ya-Toolbar {
+  background-color: transparent !important;
+  margin-bottom: 0.5em;
+}
+
+.ode-ContextMenuItem, .ode-CurrentColor {
+  font-size: 1rem !important;
+}
+
+body, table td, select {
+  font-size: 1rem !important;
+}
+
+.ode-Box-header-caption, .ode-Box-header-caption-highlighted {
+  font-size: 1rem;
+  font-weight: bold;
+  padding-top: none;
+  padding: 0.75em;
+  line-height: 1.5;
+  color: white;
+}
+
+.ode-Box-header {
+  background-color: #4156A6;
+  border: none !important;
+}
+
+.ode-Box-body-padding {
+  margin-top: 1em;
+}
+
+.ode-ProjectHeaderRow {
+  background: none !important;
+  background-color: #A0AAD2 !important;
+  border: none;
+  font-size: 1rem !important;
+}
+
+.ode-Box-content {
+  font-size: 1rem !important;
+  background-color: transparent !important;
+  background-image: none ,!important;
+  /* padding: 1em 0; */
+  border: 0 !important;
+  box-shadow: 0px 0px 0px 0px !important;
+}
+
+.ode-ProjectHeaderLabel {
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+  padding: 0.5em 0;
+}
+
+.ode-ProjectNameLabel {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #555;
+  cursor: pointer;
+  line-height: 1.5;
+  padding: 0.5em 0;
+}
+
+.ya-Toolbar .ya-ProjectName {
+  color: white;
+  font-weight: bold;
+  font-size: 1em;
+  width: 18em !important;
+  background-color: #4156A6;
+  padding: 1em 0;
+  margin-top: 0.3em;
+  margin-left: 0.25em;
+  padding-left: 0.5em;
+  text-shadow: none;
+}
+
+.ode-Box-body {
+  padding: 0;
+  background-color: white;
+}
+
+.ode-ContextMenuItem {
+  min-width: 10em;
+  padding: 0.5em 1em;
+  -o-transition: color .1s ease-out, background .1s ease-in;
+  -ms-transition: color .1s ease-out, background .1s ease-in;
+  -moz-transition: color .1s ease-out, background .1s ease-in;
+  -webkit-transition: color .1s ease-out, background .1s ease-in;
+  transition: color .1s ease-out, background .1s ease-in;
+}
+
+.ode-ProjectRowHighlighted {
+  background-color: #D9DDED;
+  border-collapse: collapse;
+}
+
+td {
+}
+
+.ode-ProjectTable td:nth-child(1) {
+  text-align: center;
+}
+
+[type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+
+[type="checkbox"]:not(:checked) + label, [type="checkbox"]:checked + label {
+  position: relative;
+  padding: 0 0.5em;
+  cursor: pointer;
+}
+
+[type="checkbox"]:not(:checked) + label:before, [type="checkbox"]:checked + label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1em;
+  height: 1em;
+  border: 2px solid #ccc;
+  background: #fff;
+  border-radius: 4px;
+}
+
+[type="checkbox"]:not(:checked) + label:after, [type="checkbox"]:checked + label:after {
+  content: '\2714';
+  position: absolute;
+  top: .25em;
+  left: .2em;
+  font-size: 1em;
+  line-height: 0.8;
+  color: white;
+}
+
+[type="checkbox"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+
+[type="checkbox"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+[type="checkbox"]:disabled:not(:checked) + label:before, [type="checkbox"]:disabled:checked + label:before {
+  box-shadow: none;
+  border-color: #bbb;
+  background-color: #ddd;
+}
+
+[type="checkbox"]:disabled:checked + label:after {
+  color: #999;
+}
+
+[type="checkbox"]:disabled + label {
+  color: #aaa;
+}
+
+[type="checkbox"]:checked + label:before {
+  border: 2px solid #4156A6 !important;
+  background-color: #4156A6;
+}
+
+label:hover:before {
+  border: 2px solid #4156A6 !important;
+}
+
+.ode-ContextMenuItem {
+  padding: 0.5em 1em;
+}
+
+.gwt-Button {
+  background: none;
+  background-color: #4156A6;
+  color: white;
+  padding: 1em 2em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em !important;
+  cursor: pointer;
+  border-radius: 0.25em;
+  text-shadow: none;
+  background-image: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: none;
+}
+
+.gwt-Button:hover {
+  color: white;
+  background-color: #172c79;
+}
+
+.ode-DialogBox .gwt-Button {
+  width: 100%;
+  margin: 0;
+}
+
+.ode-DialogBox .Caption {
+  background-color: #4156A6;
+  color: white;
+  font-weight: bold;
+  font-size: 1em;
+  padding: 0.5em 0.25em;
+  box-shadow: none;
+}
+
+.ode-DialogBox {
+  border: 4px solid #4156A6;
+}
+
+.gwt-Tree .gwt-TreeItem {
+  font-size: 1em;
+}
+
+.gwt-TreeItem .gwt-HTML {
+  padding: 0.25em 0;
+}
+
+.gwt-Tree {
+  padding: 1em 0 0 1em;
+}
+
+.gwt-Tree .gwt-TreeItem span:hover, .gwt-Tree .gwt-TreeItem-selected span {
+  background-color: #D9DDED;
+}
+
+.ode-Box-content .ode-Box-body.ode-Box-body-padding {
+  margin-top: 0;
+}
+
+.gwt-StackPanelItem div {
+  background: none;
+  background-color: #D9DDED;
+  font-size: 1em;
+  padding: 0.75em 0.5em;
+}
+
+.ode-SimplePaletteItem-caption {
+  font-size: 1em;
+}
+
+input.gwt-TextBox {
+  padding: 1em 0.5em;
+  margin: 0.25em 0;
+  font-size: 1em;
+}
+
+input.ode-PropertyEditor {
+  font-size: 1em;
+  margin: 0.25em 0;
+  min-height: 2em;
+}
+
+.ode-PropertiesComponentName {
+  font-size: 1em;
+  background-color: #D9DDED;
+}
+
+.ode-DialogBox .ode-LabeledTextBox {
+  padding: 0.5em 0.5em;
+  margin: 0.25em 0;
+  font-size: 1em;
+  font-family: Rubik, Roboto, Helvetica, Arial, sans-serif;
+}
+
+.ode-ComponentHelpPopup {
+  border: 4px solid #4156A6;
+}
+
+.ode-ComponentHelpPopup-TitleBar {
+  background-color: #4156A6;
+  color: white;
+  font-weight: bold;
+  font-size: 1em;
+  padding: 0.5em 0.25em;
+  box-shadow: none;
+}
+
+.ode-ComponentHelpPopup-Body {
+  font-size: 1em;
+}
+
+.ode-ComponentHelpPopup-Link {
+  font-size: 1em;
+}
+
+.ode-ComponentHelpPopup-Link a {
+  color: #4156A6;
+}
+
+code {
+  font-size: 1.25em;
+  background-color: #D9DDED;
+}
+
+.ode-PropertiesPanel {
+  background-color: #d9dded21;
+}
+
+.ode-ChoicePropertyEditor {
+  width: 95%;
+  padding: 0.5em 0.5em;
+}
+
+.ode-PropertyEditor {
+  width: 95%;
+  padding: 0.5em 0.5em;
+  font-size: 1em;
+}
+
+table.ode-SimplePaletteItem:hover {
+  background-color: rgb(217, 221, 237) !important;
+}
+
+.ode-PanelButtons {
+  width: 17.5em;
+  margin-bottom: 1em;
+}
+
+.ode-PanelButtons .ode-TextButton.ode-TextButton-up {
+  /* width: 100%; */
+  max-width: 10em;
+  margin-top: 1em;
+}
+
+.ode-PanelButtons .ode-TextButton.ode-TextButton-up-hovering {
+  /* width: 100%; */
+  max-width: 10em;
+  margin-top: 1em;
+  background-color: #172c79 !important;
+}
+
+.gwt-CheckBox label {
+  padding-left: 2em !important;
+}
+
+.ode-SimpleFormDesigner {
+  margin-top: 0.5em;
+}
+
+.ode-SimpleMockFormPhonePortrait.ode-SimpleMockFormPhonePortrait-selected {
+  margin: 1.5em 0;
+}
+
+.gwt-TreeItem .gwt-HTML img {
+  margin-right: 1em;
+}
+
+table.ode-SimpleFormDesigner td {
+  text-align: center;
+}
+
+.ode-SimpleUiDesignerNonVisibleComponents {
+  margin-bottom: 3em;
+}
+
+.ode-MultipleChoicePropertyEditor {
+  min-width: 20em;
+}
+
+.ode-MultipleChoicePropertyEditor .popupContent table {
+  width: 100%;
+}
+
+select.gwt-ListBox {
+  border: 0;
+  max-height: 15em;
+}
+
+.gwt-ListBox option {
+  padding: 0.5em 0.25em;
+}
+
+body > div.ode-MultipleChoicePropertyEditor > div > table > tbody > tr:nth-child(1) > td > table > tbody > tr:nth-child(2) > td > button {
+  margin: 0.5em 0;
+}
+
+body > div.ode-MultipleChoicePropertyEditor > div > table > tbody > tr:nth-child(2) > td > table > tbody > tr > td > button {
+  width: 98%;
+}
+
+.ode-SimplePaletteItem-icon {
+  height: 20px;
+  width: 20px;
+  vertical-align: text-top;
+}
+
+.GG-QS0WCFJ:hover {
+  background-color: #4156a6 !important;
+}
+
+.GG-QS0WCEJ:hover {
+  background-color: #4156a6 !important;
+}
+
+.ode-SimpleMockButton {
+  padding: 4px 8px;
+  text-shadow: none;
+  background-color: #d6d7d7;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+img.gwt-Image {
+  height: 20px;
+  width: 20px;
+  vertical-align: text-top;
+}
+
+span.gwt-CheckBox {
+  display: -webkit-inline-box;
+}
+
+
+.projectListCheckBox input[type="checkbox"] {
+  width: auto;
+  opacity: 0.00000001;
+  position: absolute;
+  left: 0;
+  margin-left: -20px;
+}
+.projectListCheckBox label {
+  position: relative;
+}
+.projectListCheckBox label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 4px;
+  width: 14px;
+  height: 14px;
+  transition: transform 0.28s ease;
+  border-radius: 30px;
+  border: 2px solid var(--scheme);
+}
+.projectListCheckBox label:after {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 4px;
+  border-bottom: 2px solid var(--scheme);
+  border-left: 2px solid var(--scheme);
+  -webkit-transform: rotate(-45deg) scale(0);
+  transform: rotate(-45deg) scale(0);
+  transition: transform ease 0.25s;
+  will-change: transform;
+  position: absolute;
+  top: 9px;
+  left: 8px;
+}
+.projectListCheckBox input[type="checkbox"]:checked ~ label::before {
+  color: #7bbe72;
+}
+
+.projectListCheckBox input[type="checkbox"]:checked ~ label::after {
+  -webkit-transform: rotate(-45deg) scale(1);
+  transform: rotate(-45deg) scale(1);
+}
+
+.projectListCheckBox label {
+  min-height: 34px;
+  display: block;
+  padding-left: 40px;
+  margin-bottom: 0;
+  font-weight: normal;
+  cursor: pointer;
+  vertical-align: sub;
+  margin-top: 4px;
+}
+.projectListCheckBox input[type="checkbox"]:focus + label::before {
+  outline: 0;
+}
+
+/*Property Editor Checkbox Style Changed*/
+
+/*.ode-PropertyEditor input[type=checkbox]{
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+.ode-PropertyEditor label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 30px;
+  height: 15px;
+  background: grey;
+  display: block;
+  border-radius: 100px;
+  position: relative;
+}
+
+.ode-PropertyEditor label:after {
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  border-radius: 90px;
+  transition: 0.3s;
+}
+
+.ode-PropertyEditor input:checked + label {
+  background: var(--mid-blue);
+}
+
+.ode-PropertyEditor input:checked + label:after {
+  left: calc(100%);
+  transform: translateX(-100%);
+}
+
+div.dropdiv div {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  pointer-events: none;
+}
+
+div.dropdiv p {
+  text-align: center;
+  top: -15pt;
+  font-size: 18pt;
+  line-height: 30pt;
+  color: darkgreen;
+  margin: 0;
+  position: relative;
+}
+
+.ode-PropertyEditor label:active:after {
+  width: 30px;
+  }*/
+
+  .ode-PropertyEditor input[type="checkbox"]{
+    height: 16px;
+    width: 16px;
+    outline: none;
+    position: relative;
+    background-color: tomato;
+    border-radius: 30px;
+    transition: background-image .5s;
+    margin: 15px 10px 10px 0px;
+  }
+
+  .ode-PropertyEditor input:checked[type="checkbox"]{
+  }
+
+  .ode-PropertyEditor input[type="checkbox"]:before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 14px;
+    width: 14px;
+    background-color: white;
+    border-radius: 20px;
+    transform: scale(1.1);
+    transition: .5s;
+  }
+
+  .ode-PropertyEditor input:checked[type="checkbox"]:before{
+    left: 16px;
+  }
+
+  .unselected-Component-Palette{
+    height: 15px;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .unselected-Component-Palette:hover{
+    background-color: var(--hover-background);
+    height: 15px;
+    cursor: pointer;
+  }
+
+  .selected-Component-Palette{
+    height: 15px;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+/*.source-Structure{
+  background-color: var(--property-panel-background);
+  }*/
+   .source-Structure{
+  padding-top:5px;
+  }
+  #themeChangeToggle input[type="checkbox"]{
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    outline: none;
+    background-image: url("../images/sunny.png");
+    background-size: 20px 20px;
+    transition: background-image .5s;
+  }
+  #themeChangeToggle  input:checked[type="checkbox"]{
+    background-image: url("../images/fog.png");
+    background-size: 20px 20px;
+  }
+
+  #hiddenCompCheckBox input[type="checkbox"]{
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    outline: none;
+    background-image: url("../images/visibility_off.png");
+    background-size: 20px 20px;
+    transition: background-image .5s;
+  }
+
+  #hiddenCompCheckBox input:checked[type="checkbox"]{
+    background-image: url("../images/visibility.png");
+  }
+
+  #hiddenCompCheckBox {
+    display:table;
+    padding-top: 11px;
+  }
+
+  #hiddenCompCheckBox input[type="checkbox"]{
+    display:table-cell;
+    vertical-align:middle;
+  }
+
+  #hiddenCompCheckBox label{
+    display:table-cell;
+    vertical-align:middle;
+    padding-left: 5px;
+  }
+
+  .icon-selected-bottom-nav{
+    font-size: 10px
+  }
+
+  .text-selected-bottom-nav{
+    font-size: 10px
+  }
+
+  .text-un-selected-bottom-nav{
+    color: grey;
+    font-size: 10px
+  }
+
+  .icon-un-selected-bottom-nav{
+    color: grey;
+    font-size: 10px
+  }
+
+  div.dropdiv {
+    position: fixed;
+    z-index: 1000000;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    display: none;
+    pointer-events: none;
+  }
+
+  div.dropdiv.good {
+    background-color: rgba(128, 255, 128, 0.3);
+    border: 8px dashed darkgreen;
+    display: block;
+  }
+
+  div.dropdiv div {
+    position: relative;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  div.dropdiv p {
+    text-align: center;
+    top: -15pt;
+    font-size: 24pt;
+    line-height: 30pt;
+    color: darkgreen;
+  }
+
+  .textTypePropertyEditor, .textAreaTypePropertyEditor{
+    height: 30px;
+    width: 170px;
+    padding: 5px 5px 0px 5px;
+    font-size: 13px;
+    background-color: rgb(240, 240, 240);
+    border-radius: 5px 5px 0px 0px;
+    border-bottom: 2px solid var(--secondary);
+    border-top: 0px solid transparent;
+    border-left: 0px solid transparent;
+    border-right: 0px solid transparent;
+    font-family: ProductSans-Medium;
+    font-weight: initial;
+  }
+
+  .ode-SimpleUiDesignerNonVisibleComponents{
+    padding: 20px;
+  }
+  .ode-ContextMenuItem i {
+    margin-right: 10px;
+}
+.ode-ProjectListBox div.ode-Box-content {
+    border: none!important;
+}
+table.ode-ProjectCard {
+    margin: 10px;
+    box-shadow: 1px 6px 8px #eee;
+    width: calc(20vw - 30px);
+    height: 160px;
+    border-radius: 4px;
+    border: 1px lightgray solid;
+}
+table.ode-ProjectCard {
+    margin: 10px;
+    box-shadow: 1px 6px 8px #eee;
+    width: calc(20vw - 30px);
+    height: 160px;
+    border-radius: 4px;
+    border: 1px lightgray solid;
+}
+img.ode-ProjectLogo {
+    width: 30px;
+    margin-top: 5px;
+}
+table.ode-ProjectButtons {
+    margin-top: 30px;
+}
+button.ode-ProjectButton {
+    background: none;
+    border: none;
+    color: gray;
+    width: 30px;
+    margin-top: 5px;
+    cursor: pointer;
+    padding: 0px;
+}
+.ode-ProjectDates .gwt-Label {
+    margin-bottom: 15px;
+    margin-left: 5px;
+    margin-right: 10px;
+    width: calc(20vw - 100px);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: var(--text)
+}
+table.ode-ProjectSidePanel {
+    padding: 5px;
+    border-right: 1px lightgray solid;
+    height: 100%;
+    width: min-content;
+}
+.ode-HomeButtons {
+    margin-left: 15px;
+    margin-top: -10px;
+    margin-bottom: -15px;
+ }
+button.gwt-Button.projectOpButtons {
+    font-size: 13px;
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+    background-color: var(--secondary);
+    color: white;
+    line-height: 24px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: normal;
+    border: .5px solid transparent;
+    -webkit-transition: background-color 0.2s;
+    transition: background-color 0.2s;
+    margin-right: 10px;
+ }
+.ode-TextButton.ode-ProjectHeaderLabel.ode-TextButton-up {
+    font-size: 13px;
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+    background-color: #ffffff;
+    color: var(--secondary);
+    line-height: 24px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: normal;
+    border: 1px solid #eee;
+    -webkit-transition: background-color 0.2s;
+    transition: background-color 0.2s;
+    margin-right: 10px;
+}
+.ode-TextButton.ode-ProjectHeaderLabel:hover {
+    font-size: 13px;
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+    background-color: #ffffff;
+    color: var(--secondary);
+    line-height: 24px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: normal;
+    border: 1px solid #eee;
+    -webkit-transition: background-color 0.2s;
+    transition: background-color 0.2s;
+    margin-right: 10px;
+}
+button.ode-PropertyEditor {
+    border: 1px solid var(--tertiary)!important;
+    background: var(--property-background);
+    color: var(--text);
+    outline-color: transparent;
+    outline-style: none;
+    outline: none;
+    box-shadow: none;
+    width: -webkit-fill-available;
+    padding: 10px 10px;
+    text-align: left;
+    margin-bottom: 4px;
+    font-size: 12px;
+    vertical-align: middle;
+    border-radius: 4px;
+}
+button.ode-ColorButton {
+    border: 1px solid #aaa;
+    width: 20px;
+    height: 20px;
+    padding: 0px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+table.ode-ColorPickerButtons {
+    width: -webkit-fill-available;
+}
+button.ode-ColorPickerButton {
+    font-size: 11px;
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+    background-color: var(--secondary);
+    color: #FFFFFF;
+    line-height: 24px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: normal;
+    border: .5px solid transparent;
+    transition: background-color 0.2s;
+    margin: 10px 7px 7px 7px;
+    width: -webkit-fill-available;
+    border-radius: 3px;
+    cursor: pointer;
+}
+table.ode-ColorButtonList {
+    margin: 0px 8px;
+}
+input.goog-hsva-palette-sm-input {
+    width: 134px;
+    border: none;
+    background: #ececec;
+    border-radius: 0px;
+ }
+.ode-material-icon-button{
+    background: none;
+    border: none;
+    color: var(--text);
+    width: 30px;
+    margin-top: 5px;
+    cursor: pointer;
+    padding: 0px;
+}

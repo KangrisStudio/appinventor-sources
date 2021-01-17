@@ -124,7 +124,6 @@ public class DesignToolbar extends Toolbar {
   private static final String WIDGET_NAME_SCREENS_DROPDOWN = "ScreensDropdown";
   private static final String WIDGET_NAME_SWITCH_TO_BLOCKS_EDITOR = "SwitchToBlocksEditor";
   private static final String WIDGET_NAME_SWITCH_TO_FORM_EDITOR = "SwitchToFormEditor";
-  private static final String WIDGET_NAME_SENDTOGALLERY = "SendToGallery";
 
   // Switch language
   private static final String WIDGET_NAME_SWITCH_LANGUAGE = "Language";
@@ -132,8 +131,6 @@ public class DesignToolbar extends Toolbar {
   private static final String WIDGET_NAME_SWITCH_LANGUAGE_CHINESE_CN = "Simplified Chinese";
   private static final String WIDGET_NAME_SWITCH_LANGUAGE_SPANISH_ES = "Spanish-Spain";
   private static final String WIDGET_NAME_SWITCH_LANGUAGE_PORTUGUESE = "Portuguese";
-  //private static final String WIDGET_NAME_SWITCH_LANGUAGE_GERMAN = "German";
-  //private static final String WIDGET_NAME_SWITCH_LANGUAGE_VIETNAMESE = "Vietnamese";
 
   // Enum for type of view showing in the design tab
   public enum View {
@@ -160,9 +157,6 @@ public class DesignToolbar extends Toolbar {
   // on the device.
   public static LinkedList<String> pushedScreens = Lists.newLinkedList();
 
-  // Is the Gallery Enabled (new gallery)?
-  private boolean galleryEnabled = false;
-
   /**
    * Initializes and assembles all commands into buttons in the toolbar.
    */
@@ -170,7 +164,6 @@ public class DesignToolbar extends Toolbar {
     super();
 
     isReadOnly = Ode.getInstance().isReadOnly();
-    galleryEnabled = Ode.getInstance().getSystemConfig().getGalleryEnabled();
     projectNameLabel = new Label();
     projectNameLabel.setStyleName("ya-ProjectName");
     HorizontalPanel toolbar = (HorizontalPanel) getWidget();
@@ -191,10 +184,6 @@ public class DesignToolbar extends Toolbar {
           new AddFormAction()));
       addButton(new ToolbarItem(WIDGET_NAME_REMOVEFORM, MESSAGES.removeFormButton(),
           new RemoveFormAction()));
-    }
-    if (galleryEnabled && !Ode.getInstance().getGalleryReadOnly()) {
-      addButton(new ToolbarItem(WIDGET_NAME_SENDTOGALLERY,
-          MESSAGES.publishToGalleryButton(), new SendToGalleryAction()));
     }
 
     addButton(new ToolbarItem(WIDGET_NAME_SWITCH_TO_FORM_EDITOR,

@@ -18,7 +18,6 @@ import com.google.appinventor.client.widgets.DropDownButton;
 import com.google.appinventor.client.widgets.TextButton;
 
 import com.google.appinventor.shared.rpc.project.ProjectRootNode;
-import com.google.appinventor.shared.rpc.user.Config;
 import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
 import com.google.gwt.core.client.GWT;
@@ -32,19 +31,8 @@ import com.google.gwt.resources.client.ClientBundle;
 import com.google.gwt.resources.client.TextResource;
 import com.google.gwt.user.client.Command;
 import com.google.gwt.user.client.Window;
-import com.google.gwt.user.client.ui.Button;
-import com.google.gwt.user.client.ui.Composite;
-import com.google.gwt.user.client.ui.FlowPanel;
-import com.google.gwt.user.client.ui.HorizontalPanel;
-import com.google.gwt.user.client.ui.Image;
-import com.google.gwt.user.client.ui.Label;
-import com.google.gwt.user.client.ui.PopupPanel;
-import com.google.gwt.user.client.ui.ScrollPanel;
-import com.google.gwt.user.client.ui.VerticalPanel;
+import com.google.gwt.user.client.ui.*;
 
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Date;
 import java.util.List;
 import java.util.MissingResourceException;
 
@@ -59,6 +47,7 @@ public class TopPanel extends Composite {
   private final DropDownButton accountButton;
   public DropDownButton languageDropDown;
 
+  private final String WIDGET_NAME_ACCOUNT = "Account";
   private final String WIDGET_NAME_SIGN_OUT = "Signout";
   private final String WIDGET_NAME_USER = "User";
   private static final String WIDGET_NAME_LANGUAGE = "Language";
@@ -137,36 +126,6 @@ public class TopPanel extends Composite {
     myProjects.setStyleName("ode-TopPanelButton");
     links.add(myProjects);
 
-    // View Trash Link
-    TextButton viewTrash = new TextButton(MESSAGES.viewTrashTabName());
-    viewTrash.setStyleName("ode-TopPanelButton");
-    viewTrash.addClickHandler(new ClickHandler() {
-      @Override
-      public void onClick(ClickEvent event) {
-        ode.switchToTrash();
-      }
-    });
-    links.add(viewTrash);
-
-    Config config = ode.getSystemConfig();
-    String guideUrl = config.getGuideUrl();
-    if (!Strings.isNullOrEmpty(guideUrl)) {
-      TextButton guideLink = new TextButton(MESSAGES.guideTabName());
-      guideLink.addClickHandler(new WindowOpenClickHandler(guideUrl));
-      guideLink.setStyleName("ode-TopPanelButton");
-      links.add(guideLink);
-    }
-
-    // Feedback Link
-    String feedbackUrl = config.getFeedbackUrl();
-    if (!Strings.isNullOrEmpty(feedbackUrl)) {
-      TextButton feedbackLink = new TextButton(MESSAGES.feedbackTabName());
-      feedbackLink.addClickHandler(
-        new WindowOpenClickHandler(feedbackUrl));
-      feedbackLink.setStyleName("ode-TopPanelButton");
-      links.add(feedbackLink);
-    }
-
     // Create the Account Information
     rightPanel = new VerticalPanel();
     rightPanel.setHeight("100%");
@@ -181,8 +140,9 @@ public class TopPanel extends Composite {
     // Sign Out
     userItems.add(new DropDownItem(WIDGET_NAME_SIGN_OUT, MESSAGES.signOutLink(), new SignOutAction()));
 
-    accountButton = new DropDownButton(WIDGET_NAME_USER, " " , userItems, true);
-    accountButton.setStyleName("ode-TopPanelButton");
+    //accountButton = new DropDownButton(WIDGET_NAME_USER, " " , userItems, true);
+      accountButton = new DropDownButton(WIDGET_NAME_ACCOUNT, WIDGET_NAME_USER, userItems, true);
+      accountButton.setStyleName("ode-TopPanelButton");
 
     // Language
     List<DropDownItem> languageItems = Lists.newArrayList();
@@ -332,6 +292,5 @@ public class TopPanel extends Composite {
       }
     }
   }
-
 }
 
